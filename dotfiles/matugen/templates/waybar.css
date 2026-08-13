@@ -1,0 +1,3 @@
+@define-color bar-bg {{ colors.surface.default.hex }};
+@define-color main-accent {{ colors.primary.default.hex }};
+@define-color border-color {{ colors.primary.default.hex }};

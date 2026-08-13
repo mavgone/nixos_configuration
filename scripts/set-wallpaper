@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WALLPAPER="$1"
+
+awww img "$WALLPAPER" \
+  --transition-duration 0.8 \
+  --transition-fps 60
+matugen image "$WALLPAPER" -m dark --source-color-index 0

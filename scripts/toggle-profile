@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec sudo /run/current-system/sw/bin/systemctl start toggle-power-profile.service

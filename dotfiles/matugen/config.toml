@@ -1,0 +1,31 @@
+[config]
+reload_apps = true
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar.css'
+output_path = '~/.config/waybar/waybar.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.walker]
+input_path = '~/.config/matugen/templates/walker.css'
+output_path = '~/.config/walker/themes/matugen/style.css'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/swaync.css'
+output_path = '~/.config/swaync/style.css'
+post_hook = 'swaync-client -rs'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-border.kdl'
+output_path = '~/.config/niri/matugen-border.kdl'
+post_hook = 'niri msg action load-config-file'
+
+[templates.gtk4] # nautilus
+input_path = '~/.config/matugen/templates/gtk4.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = 'scope=$(systemctl --user list-units --type=scope --all --no-legend "app-niri-nautilus-*.scope" 2>/dev/null | awk "{print \$1}"); if [ -n "$scope" ]; then systemctl --user stop "$scope"; sleep 0.5; nautilus --new-window >/dev/null 2>&1 & fi'
+
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim-theme.txt'
+output_path = '~/.config/nvim/wallpaper-hue'
+post_hook = '~/.local/bin/select-theme.sh'

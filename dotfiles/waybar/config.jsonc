@@ -1,0 +1,230 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 35,
+
+  "modules-left": [
+    "group/niri",
+    "group/media"
+  ],
+
+  "modules-center": [
+    "group/time"
+  ],
+
+  "modules-right": [
+    "group/system"
+  ],
+
+  "group/niri": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/arch",
+      "ext/workspaces"
+    ]
+  },
+
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/media"
+    ]
+  },
+
+  "group/time": {
+    "orientation": "horizontal",
+    "modules": [
+      "clock"
+    ]
+  },
+
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/tray-expander",
+      "bluetooth",
+      "custom/separator",
+      "network",
+      "custom/separator",
+      "pulseaudio",
+      "custom/separator",
+      "temperature",
+      "custom/separator",
+      "battery"
+    ]
+  },
+
+  "custom/separator": {
+    "format": "│",
+    "tooltip": false
+  },
+
+  "ext/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  "custom/media": {
+    "exec": "~/.config/waybar/mpris.sh",
+    "interval": 0.1,
+    "return-type": "plain",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+
+  "custom/arch": {
+    "format": "<span font='Symbols Nerd Font'>\uf313</span>",
+    "on-click": "walker"
+  },
+
+  "temperature": {
+    "format": " 󰍛 {temperatureC}°C ",
+    "interval": 5
+  },
+
+  "clock": {
+    "format": " {:%d %B, %A, %H:%M} ",
+    "tooltip": false
+  },
+
+  "network": {
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "format": " {icon}",
+    "format-wifi": " {icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": " 󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "hyprctl dispatch exec '[float; size 800 500; center] ghostty -e impala'"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-discharging": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": " {capacity}%",
+
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+
+    "format-full": "󰂅",
+
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+
+    "interval": 5,
+
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "hyprctl dispatch exec '[float; size 800 500; center] ghostty -e bluetui'"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "tooltip-format": "Volume: {volume}%",
+    "scroll-step": 5,
+    "format-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": [
+      "custom/expand-icon",
+      "tray"
+    ]
+  },
+
+  "custom/expand-icon": {
+    "format": "  ",
+    "tooltip": false,
+    "on-scroll-up": "",
+    "on-scroll-down": "",
+    "on-scroll-left": "",
+    "on-scroll-right": ""
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  }
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+niri msg --json event-stream |
+while IFS= read -r line; do
+    case "$line" in
+        *'"KeyboardLayoutSwitched"'*)
+            idx=$(printf '%s\n' "$line" | sed -n 's/.*"idx":\([0-9]\+\).*/\1/p')
+
+            case "$idx" in
+                0)
+                    notify-send "Keyboard Layout" "🇬🇧 English"
+                    ;;
+                1)
+                    notify-send "Keyboard Layout" "🇷🇺 Russian"
+                    ;;
+            esac
+            ;;
+    esac
+done

@@ -1,0 +1,40 @@
+# Nix
+result
+result-*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Runtime / temporary files
+.cache/
+.tmp/
+
+# Secrets / local environment
+.env
+.env.*
+!.env.example
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

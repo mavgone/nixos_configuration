@@ -1,0 +1,9 @@
+theme = "matugen"
+
+[keybinds]
+quick_activate = []
+
+
+[providers]
+default = ["desktopapplications"]
+empty = ["desktopapplications"]
