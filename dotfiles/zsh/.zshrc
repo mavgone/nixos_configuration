@@ -10,4 +10,4 @@ eval "$(starship init zsh)"
 
 typeset -U path PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH=$PATH:/home/mavgone/.spicetify
+export PATH="$PATH:$HOME/.spicetify"
