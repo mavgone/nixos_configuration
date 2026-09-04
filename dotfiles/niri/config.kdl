@@ -7,6 +7,7 @@ input {
     }
 
     touchpad {
+        off
         tap
         natural-scroll
         accel-profile "flat"
@@ -116,13 +117,13 @@ animations {
         spring damping-ratio=0.75 stiffness=650 epsilon=0.0001
     }
 
-workspace-switch {
-    spring damping-ratio=0.95 stiffness=220 epsilon=0.0001
-}
+    workspace-switch {
+        spring damping-ratio=0.95 stiffness=220 epsilon=0.0001
+    }
 
-horizontal-view-movement {
-    spring damping-ratio=0.95 stiffness=220 epsilon=0.0001
-}
+    horizontal-view-movement {
+        spring damping-ratio=0.95 stiffness=220 epsilon=0.0001
+    }
 
     config-notification-open-close {
         duration-ms 220
@@ -136,11 +137,6 @@ window-rule {
     background-effect {
         blur true
     }
-}
-
-window-rule {
-    match app-id="^Spotify$"
-    open-maximized true
 }
 
 window-rule {
@@ -187,10 +183,6 @@ binds {
 
     Mod+Alt+R { quit;}
 
-    Mod+F10 hotkey-overlay-title="Toggle Power Profile" {
-      spawn "toggle-profile";
-    }
-
     Mod+Alt+L {
       spawn "hyprlock"
     }
@@ -212,10 +204,19 @@ binds {
         spawn "walker" "-m" "menus:wallpapers";
     }
 
-
     Mod+F9 {
-      spawn "toggle-boost"
+        spawn "~/.local/bin/toggle-boost";
     }
+
+    Mod+F10 {
+        spawn "~/.local/bin/toggle-profile";
+    }
+
+    
+    Mod+Shift+E {
+        spawn-sh "if systemctl --user restart elephant.service; then notify-send 'Elephant' 'Backend restarted'; else notify-send 'Elephant' 'Restart failed'; fi"
+    }
+
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }

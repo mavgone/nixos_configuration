@@ -4,7 +4,7 @@
   users.users."mavgone" = {
     isNormalUser = true;
     description = "mavgone";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "video" "render" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -22,8 +22,17 @@
       ll = "ls -lah";
       la = "ls -A";
       update = "sudo nixos-rebuild switch";
+      weather = "curl wttr.in";
     };
+
+    interactiveShellInit = ''
+      timer() {
+        termdown "$@" && pw-play ~/Downloads/mixkit-achievement-bell-600.wav
+      }
+    '';
   };
+
+
 
   security.sudo.extraRules = [
     {

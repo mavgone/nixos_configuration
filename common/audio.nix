@@ -11,7 +11,6 @@ in
 
     enabledExtensions = with spicePkgs.extensions; [
       adblockify
-      simpleBeautifulLyrics
       hidePodcasts
       fullScreen
       keyboardShortcut
@@ -26,6 +25,8 @@ in
       oneko
       roundedThickerBars
       newHoverPanel
+      removeTopSpacing
+      removeTheArtistsAndCreditsSectionsFromTheSidebar
     ];
   };
 }

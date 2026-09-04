@@ -27,10 +27,18 @@ if [ -f "$PIDFILE" ]; then
   fi
 fi
 
+MONITOR=$(niri msg -j workspaces |
+  jq -r '.[] | select(.is_focused == true) | .output')
+
+if [ -z "$MONITOR" ] || [ "$MONITOR" = "null" ]; then
+  notify-send "Screen recording" "Could not determine monitor"
+  exit 1
+fi
+
 OUTPUT="$OUTPUT_DIR/record-$(date +%Y-%m-%d_%H-%M-%S).mp4"
 
 gpu-screen-recorder \
-  -w eDP-1 \
+  -w "$MONITOR" \
   -f 60 \
   -q high \
   -k h264 \
@@ -40,4 +48,4 @@ gpu-screen-recorder \
 PID=$!
 echo "$PID" >"$PIDFILE"
 
-notify-send "Screen recording 🔴" "Recording started"
+notify-send "Screen recording 🔴" "Recording started on $MONITOR"

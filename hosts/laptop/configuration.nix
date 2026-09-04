@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+  { config, pkgs, ... }:
   let
     tg-ws-proxy = pkgs.python3Packages.buildPythonApplication {
       pname = "tg-ws-proxy";
@@ -74,20 +74,21 @@
     "share/thumbnailers"
   ];
 
-  environment.systemPackages = with pkgs; [
-      tg-ws-proxy
-      (writeShellScriptBin "mic-led" ''
-        case "$1" in
-          0|1)
-            echo "$1" > /sys/class/leds/platform::micmute/brightness
-            ;;
-          *)
-            echo "Usage: mic-led {0|1}" >&2
-            exit 1
-            ;;
-        esac
-      '')
-  ];
 
+  environment.systemPackages = with pkgs; [
+    tg-ws-proxy
+
+    (writeShellScriptBin "mic-led" ''
+      case "$1" in
+        0|1)
+          echo "$1" > /sys/class/leds/platform::micmute/brightness
+          ;;
+        *)
+          echo "Usage: mic-led {0|1}" >&2
+          exit 1
+          ;;
+      esac
+    '')
+  ];
   system.stateVersion = "26.05";
 }

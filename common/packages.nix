@@ -14,6 +14,10 @@
     unzip
     gcc
     gum
+    lm_sensors
+    linuxPackages.turbostat
+    termdown
+    jq
 
     # Shell
     zsh
@@ -47,17 +51,20 @@
     telegram-desktop
     nautilus
     clash-verge-rev
-    vesktop
+    zeal
     pavucontrol
     blueman
     fastfetch
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    obsidian
 
     # Development
     neovim
     neovide
     python3
     python3Packages.pip
+    live-server
+    jdk21
 
     # Spell checking
     aspell

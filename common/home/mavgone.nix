@@ -38,14 +38,18 @@
     ".config/walker/config.toml".source =
       ../../dotfiles/walker/config.toml;
 
-    ".config/waybar/config.jsonc".source =
-      ../../dotfiles/waybar/config.jsonc;
+    ".config/waybar/config.jsonc" = {
+      source = ../../dotfiles/waybar/config.jsonc;
+      force = true;
+    };
 
     ".config/waybar/style.css".source =
       ../../dotfiles/waybar/style.css;
 
-    ".config/mimeapps.list".source =
-      ../../dotfiles/mimeapps.list;
+    ".config/mimeapps.list" = {
+      source = ../../dotfiles/mimeapps.list;
+      force = true;
+    };
 
     ".zshrc" = {
       source = ../../dotfiles/zsh/.zshrc;

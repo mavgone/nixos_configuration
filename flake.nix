@@ -53,7 +53,6 @@
         silentSDDM.nixosModules.default
         spicetify-nix.nixosModules.spicetify
         home-manager.nixosModules.home-manager
-
         {
           home-manager.users.mavgone =
             import ./common/home/mavgone.nix;
