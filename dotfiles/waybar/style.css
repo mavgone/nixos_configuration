@@ -1,42 +1,42 @@
 @import "waybar.css";
 
 * {
-    /* background: transparent; */
-    color: @main-accent;
-    border: none;
-    min-height: 0;
-    font-family: 'Libertinus Mono';
-    font-size: 16px;
+  /* background: transparent; */
+  color: @main-accent;
+  border: none;
+  min-height: 0;
+  font-family: 'Libertinus Mono';
+  font-size: 17px;
 }
 
 window#waybar {
-    background: transparent;
-    box-shadow: none;
+  background: transparent;
+  box-shadow: none;
 }
 
-window#waybar > box {
-    padding-top: 8px;
+window#waybar>box {
+  padding-top: 8px;
 }
 
 .modules-left {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .modules-center {
-    background: transparent;
+  background: transparent;
 }
 
 #custom-media {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 #clock {
-    margin: 0 20px;
-    padding: 0;
+  margin: 0 20px;
+  padding: 0;
 }
 
 .modules-right {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 /* Убираем все отдельные фоны */
@@ -52,62 +52,62 @@ window#waybar > box {
 #custom-expand-icon,
 #group-tray-expander,
 #group-system {
-    background: transparent;
+  background: transparent;
 }
 
 /* Workspaces */
 #workspaces button {
-    all: initial;
-    color: @main-accent;
-    padding: 0 6px;
-    margin: 0 1.5px;
-    min-width: 9px;
+  all: initial;
+  color: @main-accent;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
 }
 
 #workspaces button.empty {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* Arch */
 #custom-arch {
-    padding: 0 6px;
-    margin: 0 1.5px;
-    min-width: 12px;
-    font-size: 16px;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 12px;
+  font-size: 16px;
 }
 
 /* Системные элементы */
 #cpu,
 #battery,
 #pulseaudio {
-    min-width: 12px;
-    margin: 0 7.5px;
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
 #network {
-    margin-right: 13px;
+  margin-right: 13px;
 }
 
 #custom-expand-icon {
-    margin-right: 18px;
+  margin-right: 18px;
 }
 
 #tray {
-    margin-right: 16px;
+  margin-right: 16px;
 }
 
 tooltip {
-    background: rgba(15, 17, 20, 0.9);
-    padding: 6px;
-    border-radius: 6px;
+  background: rgba(15, 17, 20, 0.9);
+  padding: 6px;
+  border-radius: 6px;
 }
 
 #custom-update {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .hidden {
-    opacity: 0;
+  opacity: 0;
 }
 
 
@@ -116,15 +116,15 @@ tooltip {
 #media,
 #time,
 #system {
-    background: rgba(15, 17, 20, 1);
-    border-radius: 16px;
-    margin: 0 4px;
-    border: 1px solid @border-color;
+  background: rgba(15, 17, 20, 1);
+  border-radius: 16px;
+  margin: 0 4px;
+  border: 1px solid @border-color;
 }
 
 
 #clock {
-    margin: 0;
+  margin: 0;
 }
 
 #media {

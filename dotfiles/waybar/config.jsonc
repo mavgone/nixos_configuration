@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "spacing": 0,
-  "height": 37,
+  "height": 45,
 
   "modules-left": [
     "group/niri",
