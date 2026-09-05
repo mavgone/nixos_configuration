@@ -18,6 +18,7 @@
     linuxPackages.turbostat
     termdown
     jq
+    fastfetch
 
     # Shell
     zsh
@@ -54,9 +55,9 @@
     zeal
     pavucontrol
     blueman
-    fastfetch
     zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     obsidian
+    libreoffice
 
     # Development
     neovim
@@ -65,6 +66,7 @@
     python3Packages.pip
     live-server
     jdk21
+    nodejs
 
     # Spell checking
     aspell

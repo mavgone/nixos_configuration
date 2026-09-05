@@ -25,7 +25,7 @@ input {
 output "eDP-1" {
     mode "1920x1080@60.001"
 
-    scale 1.25
+    scale 1
 
     transform "normal"
 
@@ -58,7 +58,7 @@ layout {
     }
 
     border {
-        width 2
+        width 6
         active-color "#7fc8ff"
         inactive-color "#505050"
 
@@ -143,6 +143,7 @@ window-rule {
     match app-id="^steam$"
     open-maximized true
 }
+
 window-rule {
     match app-id="^zen$"
 
@@ -169,7 +170,7 @@ window-rule {
     geometry-corner-radius 16
     clip-to-geometry true
     match is-active=false
-    opacity 0.55
+    // opacity 0.55
 }
 
 binds {
