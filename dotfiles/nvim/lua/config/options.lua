@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.opt.spell = true
 vim.opt.spelllang = { "ru", "en" }
+vim.o.guifont = "JetBrainsMono Nerd Font:h14"

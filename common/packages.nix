@@ -19,6 +19,7 @@
     termdown
     jq
     fastfetch
+    usbutils
 
     # Shell
     zsh
@@ -67,6 +68,12 @@
     live-server
     jdk21
     nodejs
+    tshark
+    nuclei
+    metasploit
+    maven
+    jdt-language-server
+
 
     # Spell checking
     aspell

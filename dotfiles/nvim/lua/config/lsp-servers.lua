@@ -2,12 +2,6 @@ local servers = {
   html = {
     cmd = { "vscode-html-language-server", "--stdio" },
   },
-  css = {
-    cmd = { "vscode-css-language-server", "--stdio" },
-  },
-  json = {
-    cmd = { "vscode-json-language-server", "--stdio" },
-  },
   yaml = {
     cmd = { "yaml-language-server", "--stdio" },
   },

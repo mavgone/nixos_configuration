@@ -25,6 +25,7 @@
     ".config/matugen/templates" = {
       source = ../../dotfiles/matugen/templates;
       recursive = true;
+      force = true;
     };
 
     ".config/niri/config.kdl" = {
@@ -95,8 +96,16 @@
       source = ../../scripts/wallpaper-theme.sh;
       executable = true;
     };
-    ".config/nvim/init.lua".source =
-      ../../dotfiles/nvim/init.lua;
+
+    ".config/nvim/ftplugin" = {
+      source = ../../dotfiles/nvim/ftplugin;
+      recursive = true;
+    };
+
+    ".config/nvim/init.lua" = {
+      source = ../../dotfiles/nvim/init.lua;
+      force = true;
+    };
 
     ".config/nvim/lazy-lock.json".source =
       ../../dotfiles/nvim/lazy-lock.json;
@@ -119,6 +128,7 @@
     ".config/nvim/lua" = {
       source = ../../dotfiles/nvim/lua;
       recursive = true;
+      force = true;
     };
 
     ".config/elephant/menus/wallpapers.lua" = {
